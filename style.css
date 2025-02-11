@@ -1,3 +1,10 @@
+/* 
+1. Added hover and focus effects for social media images:
+   - Added 'transition' for a smooth scale effect on hover.
+   - Added 'transform: scale(1.1)' for a slight zoom on focus.
+   - Included 'outline' for focus state to improve accessibility.
+2. Removed p1, p2 classes as they were not being used in the HTML (potentially unnecessary styles).
+*/
 
 a{
     text-decoration: none;
@@ -63,21 +70,28 @@ h1, h2, p {
     border-radius: 10px;
 }
 
-p1,p2{
-    color: #45a29e;
-}
 
 .social-links {
     text-align: center;
     margin-top: 20px;
 }
 
-
-
-
 .social-links img {
     margin: 0 10px;
     border-radius: 50%;
+    transition: transform 0.3s ease, outline 0.3s ease; 
+}
+
+
+.social-links img:focus {
+    outline: 2px solid #66FCF1; 
+    transform: scale(1.1); 
+}
+
+
+.social-links img:hover {
+    transform: scale(1.05); 
+    cursor: pointer; 
 }
 
 /* Mobile styles */
